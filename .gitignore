@@ -1,6 +1,3 @@
 # Created by .ignore support plugin (hsz.mobi)
-/snapshots/
 /.ipynb_checkpoints/
-/tmp/
 .idea
-__pycache__
