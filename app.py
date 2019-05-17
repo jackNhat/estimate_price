@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf8 -*-
-import json
+import ast
 
 from flask import Flask, request, jsonify
 from model import estimate_price
@@ -8,11 +8,11 @@ from model import estimate_price
 app = Flask(__name__)
 
 
-@app.route('/api/estimate_price', methods=['GET'])
+@app.route('/api/estimate_price', methods=['POST'])
 def predict():
-    if request.method == 'GET':
-        input_data = request.args.get('user_input')
-        data = json.load(input_data)
+    if request.method == 'POST':
+        input_data = request.form['data']
+        data = ast.literal_eval(input_data)
     try:
         price = estimate_price(data)
     except:

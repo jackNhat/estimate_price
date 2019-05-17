@@ -45,4 +45,4 @@ def estimate_price(user_input):
     """
     input_encode = input_to_one_hot(user_input)
     price_pred = model.predict([input_encode])[0]
-    return price_pred
+    return round(price_pred, 2)
