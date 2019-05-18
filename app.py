@@ -3,7 +3,7 @@
 import ast
 
 from flask import Flask, request, jsonify
-from model import estimate_price
+from gbr_model import estimate_price
 
 app = Flask(__name__)
 
@@ -21,4 +21,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=8001)
+    app.run(debug=True, host="0.0.0.0", port=8000)
